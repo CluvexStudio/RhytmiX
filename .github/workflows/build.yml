@@ -1,0 +1,107 @@
+name: 🚀 Build RhytmiX APK
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [ created ]
+
+jobs:
+  build:
+    name: 📱 Build APK
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        arch: [arm64-v8a, armeabi-v7a]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: ☕ Setup Java JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        
+    - name: 🐘 Setup Gradle
+      uses: gradle/gradle-build-action@v2
+      
+    - name: 📋 Make Gradlew Executable
+      run: chmod +x ./gradlew
+      
+    - name: 🧹 Clean Project
+      run: ./gradlew clean
+      
+    - name: 🔨 Build Debug APK (${{ matrix.arch }})
+      run: ./gradlew assembleDebug -Pandroid.injected.build.abi=${{ matrix.arch }}
+      
+    - name: 📦 Upload APK (${{ matrix.arch }})
+      uses: actions/upload-artifact@v4
+      with:
+        name: RhytmiX-${{ matrix.arch }}-${{ github.sha }}
+        path: app/build/outputs/apk/debug/*.apk
+        retention-days: 30
+        
+    - name: 🏷️ Create Release (on tag)
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: app/build/outputs/apk/debug/*.apk
+        name: "RhytmiX v${{ github.ref_name }}"
+        body: |
+          🎵 **RhytmiX Music Player**
+          
+          ### 📱 Downloads:
+          - **ARM64-v8a**: For modern 64-bit devices
+          - **ARMv7a**: For older 32-bit devices
+          
+          ### ✨ Features:
+          - 🎨 Beautiful Material You Design
+          - 🎵 High-Quality Music Playback
+          - 📱 Intuitive User Interface
+          - 🌓 Dark/Light Theme Support
+          - ❤️ Favorites & Playlists
+          
+          ### 🐛 Bug Fixes & Improvements:
+          - Performance optimizations
+          - UI/UX enhancements
+          - Bug fixes and stability improvements
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  test:
+    name: 🧪 Run Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: ☕ Setup Java JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        
+    - name: 🐘 Setup Gradle
+      uses: gradle/gradle-build-action@v2
+      
+    - name: 📋 Make Gradlew Executable
+      run: chmod +x ./gradlew
+      
+    - name: 🧪 Run Unit Tests
+      run: ./gradlew testDebugUnitTest
+      
+    - name: 📊 Generate Test Report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()
+      with:
+        name: 📋 Test Results
+        path: '**/build/test-results/testDebugUnitTest/TEST-*.xml'
+        reporter: java-junit
