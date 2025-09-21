@@ -1,14 +1,14 @@
 # 🎵 RhytmiX
 ### *The Ultimate Android Music Player Experience*
 
-[![GitHub release](https://img.shields.io/github/v/release/Cluvex/RhytmiX?style=for-the-badge&logo=android&color=3DDC84)](https://github.com/Cluvex/RhytmiX/releases)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Cluvex/RhytmiX/build.yml?style=for-the-badge&logo=github)](https://github.com/Cluvex/RhytmiX/actions)
-[![License](https://img.shields.io/github/license/Cluvex/RhytmiX?style=for-the-badge&color=blue)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/Cluvex/RhytmiX?style=for-the-badge&color=yellow)](https://github.com/Cluvex/RhytmiX/stargazers)
+[![GitHub release](https://img.shields.io/github/v/release/CluvexStudio/RhytmiX?style=for-the-badge&logo=android&color=3DDC84)](https://github.com/CluvexStudio/RhytmiX/releases)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/CluvexStudio/RhytmiX/build.yml?style=for-the-badge&logo=github)](https://github.com/CluvexStudio/RhytmiX/actions)
+[![License](https://img.shields.io/github/license/CluvexStudio/RhytmiX?style=for-the-badge&color=blue)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/CluvexStudio/RhytmiX?style=for-the-badge&color=yellow)](https://github.com/CluvexStudio/RhytmiX/stargazers)
 
 **RhytmiX** is a modern, open-source Android music player built with **Jetpack Compose** and **Material You** design principles. Experience your music like never before with a clean, intuitive interface and powerful features.
 
-[📱 Download APK](https://github.com/Cluvex/RhytmiX/releases/latest) • [🐛 Report Bug](https://github.com/Cluvex/RhytmiX/issues) • [💡 Request Feature](https://github.com/Cluvex/RhytmiX/issues)
+[📱 Download APK](https://github.com/CluvexStudio/RhytmiX/releases/latest) • [🐛 Report Bug](https://github.com/CluvexStudio/RhytmiX/issues) • [💡 Request Feature](https://github.com/CluvexStudio/RhytmiX/issues)
 
 ---
 
@@ -59,7 +59,7 @@
 ## 📱 Download
 
 ### 🚀 **Latest Release**
-Download the latest version from our [Releases page](https://github.com/Cluvex/RhytmiX/releases/latest)
+Download the latest version from our [Releases page](https://github.com/CluvexStudio/RhytmiX/releases/latest)
 
 #### Architecture Support:
 - **ARM64-v8a** - For modern 64-bit devices (Recommended)
@@ -102,7 +102,7 @@ Download the latest version from our [Releases page](https://github.com/Cluvex/R
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Cluvex/RhytmiX.git
+   git clone https://github.com/CluvexStudio/RhytmiX.git
    cd RhytmiX
    ```
 
@@ -168,22 +168,21 @@ We welcome contributions! Here's how you can help:
 - Follow [Kotlin coding conventions](https://kotlinlang.org/docs/coding-conventions.html)
 - Use **ktlint** for code formatting
 - Write meaningful commit messages
-- Add comments for complex logic
-
----
-
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **AGPL-3.0 License** - see the [LICENSE](LICENSE) file for details.
 
-```bash
-Copyright (c) 2024 Cluvex Studio
+```
+Copyright (c) 2025 CluvexStudio
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software...
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
 ---
@@ -201,9 +200,9 @@ copies of the Software...
 
 <div align="center">
 
-**Cluvex Studio**
+**CluvexStudio**
 
-[![GitHub](https://img.shields.io/badge/GitHub-Cluvex-black?style=for-the-badge&logo=github)](https://github.com/Cluvex)
+[![GitHub](https://img.shields.io/badge/GitHub-CluvexStudio-black?style=for-the-badge&logo=github)](https://github.com/CluvexStudio)
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:cluvexstudio@gmail.com)
 
 **Made with ❤️ for music lovers around the world**
