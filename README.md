@@ -3,7 +3,6 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/CluvexStudio/RhytmiX?style=for-the-badge&logo=android&color=3DDC84)](https://github.com/CluvexStudio/RhytmiX/releases)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/CluvexStudio/RhytmiX/build.yml?style=for-the-badge&logo=github)](https://github.com/CluvexStudio/RhytmiX/actions)
-[![License](https://img.shields.io/github/license/CluvexStudio/RhytmiX?style=for-the-badge&color=blue)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/CluvexStudio/RhytmiX?style=for-the-badge&color=yellow)](https://github.com/CluvexStudio/RhytmiX/stargazers)
 
 **RhytmiX** is a modern, open-source Android music player built with **Jetpack Compose** and **Material You** design principles. Experience your music like never before with a clean, intuitive interface and powerful features.
@@ -168,23 +167,6 @@ We welcome contributions! Here's how you can help:
 - Follow [Kotlin coding conventions](https://kotlinlang.org/docs/coding-conventions.html)
 - Use **ktlint** for code formatting
 - Write meaningful commit messages
-## 📄 License
-
-This project is licensed under the **AGPL-3.0 License** - see the [LICENSE](LICENSE) file for details.
-
-```
-Copyright (c) 2025 CluvexStudio
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-```
-
 ---
 
 ## 🙏 Acknowledgments
