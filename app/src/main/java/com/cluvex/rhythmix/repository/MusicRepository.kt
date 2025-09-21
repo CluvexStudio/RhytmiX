@@ -184,18 +184,20 @@ class MusicRepository(private val context: Context) {
     suspend fun getArtists(): List<Artist> {
         val artists = mutableListOf<Artist>()
         val projection = arrayOf(
-            MediaStore.Audio.Artists._ID,
-            MediaStore.Audio.Artists.ARTIST,
-            MediaStore.Audio.Artists.NUMBER_OF_TRACKS,
-            MediaStore.Audio.Artists.NUMBER_OF_ALBUMS
+            MediaStore.Audio.Playlists._ID,
+            MediaStore.Audio.Playlists.NAME,
+            MediaStore.Audio.Playlists.DATE_ADDED,
+            MediaStore.Audio.Playlists.DATE_MODIFIED
         )
-
+        
+        val sortOrder = "${MediaStore.Audio.Playlists.DATE_ADDED} DESC"
+        @Suppress("DEPRECATION")
         val cursor: Cursor? = contentResolver.query(
-            MediaStore.Audio.Artists.EXTERNAL_CONTENT_URI,
+            MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
             projection,
             null,
             null,
-            "${MediaStore.Audio.Artists.ARTIST} ASC"
+            sortOrder
         )
 
         cursor?.use {

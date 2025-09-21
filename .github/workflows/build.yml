@@ -45,18 +45,25 @@ jobs:
     - name: 🔨 Build Debug APK (${{ matrix.arch }})
       run: ./gradlew assembleDebug -Pandroid.injected.build.abi=${{ matrix.arch }}
       
+    - name: 🔍 List APK files
+      run: find . -name "*.apk" -type f
+      
     - name: 📦 Upload APK (${{ matrix.arch }})
       uses: actions/upload-artifact@v4
       with:
         name: RhytmiX-${{ matrix.arch }}-${{ github.sha }}
-        path: app/build/outputs/apk/debug/*.apk
+        path: |
+          app/build/outputs/apk/debug/*.apk
+          app/build/outputs/apk/**/*.apk
         retention-days: 30
         
     - name: 🏷️ Create Release (on tag)
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
       with:
-        files: app/build/outputs/apk/debug/*.apk
+        files: |
+          app/build/outputs/apk/debug/*.apk
+          app/build/outputs/apk/**/*.apk
         name: "RhytmiX v${{ github.ref_name }}"
         body: |
           🎵 **RhytmiX Music Player**
