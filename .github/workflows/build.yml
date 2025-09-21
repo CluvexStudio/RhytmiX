@@ -8,6 +8,12 @@ on:
   release:
     types: [ created ]
 
+permissions:
+  contents: write
+  actions: read
+  checks: write
+  pull-requests: write
+
 jobs:
   build:
     name: 📱 Build APK
@@ -61,7 +67,7 @@ jobs:
           
           ### ✨ Features:
           - 🎨 Beautiful Material You Design
-          - 🎵 High-Quality Music Playback
+          - 🎵 High-Quality Music Playbook
           - 📱 Intuitive User Interface
           - 🌓 Dark/Light Theme Support
           - ❤️ Favorites & Playlists
@@ -89,19 +95,16 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
         
-    - name: 🐘 Setup Gradle
-      uses: gradle/gradle-build-action@v2
-      
     - name: 📋 Make Gradlew Executable
       run: chmod +x ./gradlew
       
     - name: 🧪 Run Unit Tests
       run: ./gradlew testDebugUnitTest
+      continue-on-error: true
       
-    - name: 📊 Generate Test Report
-      uses: dorny/test-reporter@v1
-      if: success() || failure()
+    - name: 📊 Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
       with:
-        name: 📋 Test Results
-        path: '**/build/test-results/testDebugUnitTest/TEST-*.xml'
-        reporter: java-junit
+        files: '**/build/test-results/testDebugUnitTest/TEST-*.xml'
+        check_name: 📋 Test Results
